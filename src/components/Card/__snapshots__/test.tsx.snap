@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render label 1`] = `
+<View
+  elevation={5}
+  shadowColor="#000"
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+        "borderRadius": 5,
+        "marginRight": 18,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderTopLeftRadius": 5,
+          "borderTopRightRadius": 5,
+          "height": 120,
+          "justifyContent": "center",
+          "width": 120,
+        },
+      ]
+    }
+    testID="header-icon"
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333",
+            "fontFamily": "RobotoSlab-Regular",
+            "fontSize": 18,
+          },
+        ]
+      }
+    >
+      Doações
+    </Text>
+  </View>
+</View>
+`;
