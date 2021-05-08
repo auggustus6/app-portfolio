@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  focusable={true}
+  hitSlop={
+    Object {
+      "left": 20,
+      "top": 100,
+    }
+  }
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "left": 30,
+      "opacity": 1,
+      "position": "absolute",
+      "top": 30,
+      "zIndex": 9,
+    }
+  }
+>
+  <Image
+    accessibilityRole="image"
+    source={
+      Object {
+        "testUri": "../../../src/assets/images/chevron_left_black.png",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "height": 30,
+          "width": 30,
+        },
+      ]
+    }
+  />
+</View>
+`;

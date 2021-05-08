@@ -1,12 +1,18 @@
 export default {
   colors: {
-    primary: '#00D8D6',
+    primary: '#ED1C24',
     primaryHover: '#0A5251',
     yellow: '#FFA801',
     green: '#05C46B',
     white: '#fff',
     black: '#333',
-    gray: '#576574',
+    gray: '#666',
+    lightGray: '#808080',
+  },
+
+  border: {
+    color: '#E6E6E6',
+    radius: '8px',
   },
 
   spacings: {
@@ -19,7 +25,8 @@ export default {
     xxlarge: '26px',
   },
   font: {
-    family: 'RobotoSlab-Regular',
+    family: 'Poppins-Regular',
+    familyBold: 'Poppins-Black',
     sizes: {
       xsmall: '4px',
       small: '8px',
@@ -28,7 +35,8 @@ export default {
       xlmedium: '16px',
       large: '18px',
       xlarge: '22px',
-      xxlarge: '26px',
+      xxlarge: '24px',
+      huge: '32px',
     },
   },
 };

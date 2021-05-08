@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render label 1`] = `
+exports[`should render correctly 1`] = `
 <View
   elevation={5}
   shadowColor="#000"
@@ -8,52 +8,69 @@ exports[`should render label 1`] = `
     Array [
       Object {
         "backgroundColor": "#fff",
-        "borderRadius": 5,
-        "marginRight": 18,
+        "borderRadius": 8,
+        "marginBottom": 18,
+      },
+      Object {
+        "marginLeft": 0,
       },
     ]
   }
+  testID="card.container"
 >
   <View
+    accessibilityIgnoresInvertColors={true}
     style={
       Array [
         Object {
-          "alignItems": "center",
-          "borderTopLeftRadius": 5,
-          "borderTopRightRadius": 5,
-          "height": 120,
-          "justifyContent": "center",
-          "width": 120,
-        },
-      ]
-    }
-    testID="header-icon"
-  />
-  <View
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "alignItems": "flex-start",
+          "height": 337.5,
+          "justifyContent": "flex-end",
+          "paddingBottom": 22,
+          "paddingLeft": 22,
+          "paddingRight": 22,
+          "paddingTop": 22,
+          "width": 337.5,
         },
       ]
     }
   >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../src/assets/images/header.png",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+      testID="card.background"
+    />
     <Text
       style={
         Array [
           Object {
-            "color": "#333",
+            "color": "#fff",
             "fontFamily": "RobotoSlab-Regular",
-            "fontSize": 18,
+            "fontSize": 12,
           },
         ]
       }
     >
-      Doações
+      Restaurantes
     </Text>
   </View>
 </View>

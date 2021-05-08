@@ -2,24 +2,36 @@
 
 import React from 'react';
 import Card from '.';
-
+import { CardProps } from '.';
 import { render } from '../../utils/tests/helpers';
 
-it('should render label', () => {
-  const { getByText, toJSON } = render(<Card label="Doações" />);
-  const text = getByText(/Doações/i);
-  expect(text).toBeDefined();
+const cardProps: CardProps = {
+  label: 'Restaurantes',
+  imageSource: require('../../assets/images/header.png'),
+  index: 0,
+};
+
+it('should render correctly', () => {
+  const { toJSON } = render(<Card {...cardProps} />);
   expect(toJSON()).toMatchSnapshot();
 });
 
-it('should render header by default', () => {
-  const { getByTestId } = render(<Card label="texto" />);
-  const header = getByTestId(/header-icon/i);
-  expect(header).toBeDefined();
+it('should render label', () => {
+  const { getByText } = render(<Card {...cardProps} />);
+  const text = getByText(/Restaurantes/i);
+  expect(text).toBeDefined();
 });
 
-it('should not render header if property isIcon has false', () => {
-  const { queryByTestId } = render(<Card label="texto" isIcon={false} />);
-  const header = queryByTestId(/header-icon/i);
-  expect(header).toBeNull();
+it('should render some image source', async () => {
+  const { getByTestId } = render(<Card {...cardProps} />);
+  const imageElement = getByTestId('card.background');
+
+  expect(imageElement.props.source).toBe(cardProps.imageSource);
+});
+
+it('should add margin left if index is odd', async () => {
+  const { getByTestId } = render(<Card {...cardProps} index={1} />);
+  const container = getByTestId('card.container');
+
+  expect(container).toHaveStyleRule('margin-left', 20);
 });
