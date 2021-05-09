@@ -8,7 +8,6 @@ type ImageSource = {
 export type CardProps = {
   label: string;
   imageSource: ImageSource;
-  index: number;
 };
 
 const Card = ({ label, imageSource, ...props }: CardProps) => {

@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
+import { Restaurant } from 'utils/types/restaurant';
 
-export const Container = styled.FlatList.attrs({
+export const Container = styled(
+  FlatList as new () => FlatList<Restaurant>,
+).attrs({
   contentContainerStyle: {
     justifyContent: 'space-between',
     alignItems: 'center',

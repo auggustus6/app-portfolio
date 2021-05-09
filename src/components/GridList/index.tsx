@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/core';
 import React, { useCallback, useEffect, useRef } from 'react';
+import { useNavigation } from '@react-navigation/core';
 import {
   Animated,
   Easing,
@@ -7,8 +7,10 @@ import {
   NativeSyntheticEvent,
   TextInputSubmitEditingEventData,
   Alert,
+  ListRenderItem,
 } from 'react-native';
 import { useRestaurant } from '../../hooks/useRestaurant';
+import { Restaurant } from 'utils/types/restaurant';
 
 import Card from '../Card';
 import InputSearch from '../../components/InputSearch';
@@ -83,19 +85,23 @@ const GridList = ({ handleScrollShared }: GridListProps) => {
     );
   };
 
-  const renderItem = useCallback(({ item, index }) => {
-    return (
-      <Styles.Button activeOpacity={9} onPress={() => handleNavigate(item.id)}>
-        <Card
-          label={item.name}
-          index={index}
-          imageSource={{ uri: item.image }}
-          key={index}
-        />
-      </Styles.Button>
-    );
+  const renderItem: ListRenderItem<Restaurant> = useCallback(
+    ({ item }) => {
+      return (
+        <Styles.Button
+          activeOpacity={9}
+          onPress={() => handleNavigate(item.id)}>
+          <Card
+            label={item.name}
+            imageSource={{ uri: item.image }}
+            key={item.id}
+          />
+        </Styles.Button>
+      );
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    [],
+  );
 
   return (
     <Styles.Container
@@ -105,7 +111,7 @@ const GridList = ({ handleScrollShared }: GridListProps) => {
       onEndReachedThreshold={0.1}
       onScroll={handleScroll}
       onEndReached={() => loadRestaurants()}
-      keyExtractor={(item: any) => String(item.id)}
+      keyExtractor={item => String(item.id)}
       ListFooterComponent={renderFooter}
       ListHeaderComponent={() => (
         <>

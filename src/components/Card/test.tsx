@@ -8,7 +8,6 @@ import { render } from '../../utils/tests/helpers';
 const cardProps: CardProps = {
   label: 'Restaurantes',
   imageSource: require('../../assets/images/header.png'),
-  index: 0,
 };
 
 it('should render correctly', () => {
@@ -27,11 +26,4 @@ it('should render some image source', async () => {
   const imageElement = getByTestId('card.background');
 
   expect(imageElement.props.source).toBe(cardProps.imageSource);
-});
-
-it('should add margin left if index is odd', async () => {
-  const { getByTestId } = render(<Card {...cardProps} index={1} />);
-  const container = getByTestId('card.container');
-
-  expect(container).toHaveStyleRule('margin-left', 20);
 });

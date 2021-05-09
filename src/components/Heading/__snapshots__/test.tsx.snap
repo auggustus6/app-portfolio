@@ -1,32 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-<View
+<Text
+  align="left"
+  colorLabel="black"
+  size="large"
+  strong={false}
   style={
     Array [
       Object {
-        "alignItems": "flex-start",
-        "flexDirection": "column",
-        "flexWrap": "wrap",
-        "width": 375,
+        "color": "#333",
+        "fontFamily": "Poppins-Regular",
+        "fontSize": 24,
+        "marginTop": 18,
+        "textAlign": "left",
       },
     ]
   }
 >
-  <Text
-    colorLabel="black"
-    size="large"
-    style={
-      Array [
-        Object {
-          "color": "#333",
-          "fontFamily": "RobotoSlab-Regular",
-          "fontSize": 22,
-        },
-      ]
-    }
-  >
-    Titulo
-  </Text>
-</View>
+  Titulo
+</Text>
 `;

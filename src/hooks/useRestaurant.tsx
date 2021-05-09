@@ -37,6 +37,7 @@ export const RestaurantProvider = ({ children }: RestaurantProviderProps) => {
     }
     try {
       setLoading(true);
+
       const response = await api.get(
         `restaurants?page=${page}&limit=10&search=${search}`,
       );

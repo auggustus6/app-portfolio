@@ -3,16 +3,24 @@
 exports[`should render correctly 1`] = `
 <View
   elevation={5}
+  marginHorizontal={10}
+  marginVertical={10}
   shadowColor="#000"
+  shadowOffset={
+    Object {
+      "height": 5,
+      "width": 0,
+    }
+  }
+  shadowOpacity={0.25}
+  shadowRadius={3.84}
   style={
     Array [
       Object {
         "backgroundColor": "#fff",
         "borderRadius": 8,
-        "marginBottom": 18,
-      },
-      Object {
-        "marginLeft": 0,
+        "height": 337.5,
+        "width": 337.5,
       },
     ]
   }
@@ -23,19 +31,16 @@ exports[`should render correctly 1`] = `
     style={
       Array [
         Object {
-          "alignItems": "flex-start",
-          "height": 337.5,
+          "height": "100%",
           "justifyContent": "flex-end",
-          "paddingBottom": 22,
-          "paddingLeft": 22,
-          "paddingRight": 22,
-          "paddingTop": 22,
-          "width": 337.5,
+          "width": "100%",
         },
       ]
     }
   >
     <Image
+      borderRadius={8}
+      resizeMode="cover"
       source={
         Object {
           "testUri": "../../../src/assets/images/header.png",
@@ -64,8 +69,11 @@ exports[`should render correctly 1`] = `
         Array [
           Object {
             "color": "#fff",
-            "fontFamily": "RobotoSlab-Regular",
-            "fontSize": 12,
+            "fontFamily": "Poppins-Regular",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "paddingBottom": 8,
+            "paddingLeft": 8,
           },
         ]
       }

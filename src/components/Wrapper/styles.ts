@@ -5,6 +5,12 @@ const { height } = Dimensions.get('window');
 
 type ContainerProps = Pick<WrapperProps, 'increaseSize' | 'fullHeight'>;
 
+const modiffierWrapper = `
+  height:${height}px;
+  border-top-left-radius:0px;
+  border-top-right-radius:0px;
+`;
+
 export const Container = styled.View<ContainerProps>`
   ${({ theme, increaseSize = false, fullHeight = false }) => `
       background:${theme.colors.white};
@@ -18,6 +24,6 @@ export const Container = styled.View<ContainerProps>`
       left:0;
       z-index:9;
       
-      ${fullHeight && `height:${height}px`}
+      ${fullHeight && modiffierWrapper}
     `}
 `;

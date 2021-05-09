@@ -20,6 +20,7 @@ exports[`should render correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
+      "backgroundColor": "transparent",
       "left": 30,
       "opacity": 1,
       "position": "absolute",
