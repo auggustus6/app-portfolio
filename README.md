@@ -17,7 +17,8 @@ O APK será gerado dentro da pasta "android/app/build/outputs/apk/debug/app-debu
 Tomei a liberdade de criar alguns testes unitários e um pequeno teste e2e utilizando detox para demonstrar.
 
 Testes unitários: rode yarn test-jest 
-===========================================
+
+
 Testes e2e : rode yarn test-build e logo em seguida rode yarn test
 
 *IMPORTANTE*
