@@ -35,9 +35,6 @@ const FilterModal = () => {
   const formatedValue = (value: number) => {
     const valuePrice = value.toString();
     setPrice(parseInt(valuePrice));
-
-    console.log(parseInt(valuePrice));
-
   };
 
   const renderThumbComponent = useCallback(() => {

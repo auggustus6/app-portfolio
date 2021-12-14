@@ -26,4 +26,6 @@ Para os testes e2e é necessário você alterar o nome do seu emulador no arquiv
     
 Altere o nome da propriedade "avdName" para o nome do seu emulador.
 
+Além disso rode o comando yarn build antes de realizar os testes e2e.
+
 
