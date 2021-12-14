@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://605d074f9386d200171ba209.mockapi.io/api/v1/',
+  baseURL: 'http://5e148887bce1d10014baea80.mockapi.io/keycash/',
 });
 
 export default api;

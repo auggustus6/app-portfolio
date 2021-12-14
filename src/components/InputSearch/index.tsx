@@ -3,7 +3,7 @@ import { TextInputProps } from 'react-native';
 import { useTheme } from 'styled-components';
 import * as Styles from './styles';
 
-const icon = require('../../assets/images/search_red.png');
+const icon = require('../../assets/images/search.png');
 
 const InputSearch = (props: TextInputProps) => {
   const theme = useTheme();
@@ -12,7 +12,7 @@ const InputSearch = (props: TextInputProps) => {
       <Styles.Icon source={icon} />
       <Styles.Input
         {...props}
-        placeholder="Encontre um restaurante"
+        placeholder={props.placeholder || 'Encontre o imóvel do seu sonho'}
         placeholderTextColor={theme.colors.gray}
       />
     </Styles.Container>

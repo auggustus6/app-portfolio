@@ -6,9 +6,17 @@ import { CardProps } from '.';
 import { render } from '../../utils/tests/helpers';
 
 const cardProps: CardProps = {
-  label: 'Restaurantes',
+  label: 'Imóveis',
   imageSource: require('../../assets/images/header.png'),
+  price: 100,
+  bathrooms: 2,
+  bedrooms: 2,
+  parkingSpaces: 5,
 };
+
+beforeAll(() => {
+  render(<Card {...cardProps} />);
+});
 
 it('should render correctly', () => {
   const { toJSON } = render(<Card {...cardProps} />);
@@ -17,7 +25,7 @@ it('should render correctly', () => {
 
 it('should render label', () => {
   const { getByText } = render(<Card {...cardProps} />);
-  const text = getByText(/Restaurantes/i);
+  const text = getByText(/Imóveis/i);
   expect(text).toBeDefined();
 });
 

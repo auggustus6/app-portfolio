@@ -19,7 +19,7 @@ const textSizeModdifier = {
 
 export const Text = styled.Text<TextProps>`
   ${({ theme, colorLabel = 'black', size, strong, align = 'left' }) => `
-        color:${theme.colors[colorLabel]};
+        color:${colorLabel ? colorLabel : theme.colors.black};
         font-family:${theme.font.family};
         margin-top:${theme.spacings.large};
         text-align:${align};

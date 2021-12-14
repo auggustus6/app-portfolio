@@ -1,33 +1,24 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../../pages/Home';
-import Search from '../../pages/Search';
-import Restaurant from '../../pages/Restaurant';
+import HomeRouter from '../HomeRoutes/home.routes';
+import FilterModal from '../../pages/FilterModal';
 
 const Stack = createStackNavigator();
 
 const MainRouter = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator mode="modal" headerMode="float">
       <Stack.Screen
         name="Home"
-        component={Home}
+        component={HomeRouter}
         options={{ header: () => null }}
       />
 
       <Stack.Screen
-        name="Search"
-        component={Search}
+        name="FilterModal"
+        component={FilterModal}
         options={{
-          header: () => null,
-        }}
-      />
-
-      <Stack.Screen
-        name="Restaurant"
-        component={Restaurant}
-        options={{
-          header: () => null,
+          headerTitle: 'Busca de imóveis',
         }}
       />
     </Stack.Navigator>

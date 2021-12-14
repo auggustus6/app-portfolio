@@ -1,29 +1,15 @@
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
-import { WrapperProps } from '.';
+import { RFValue } from 'react-native-responsive-fontsize';
 const { height } = Dimensions.get('window');
 
-type ContainerProps = Pick<WrapperProps, 'increaseSize' | 'fullHeight'>;
-
-const modiffierWrapper = `
-  height:${height}px;
-  border-top-left-radius:0px;
-  border-top-right-radius:0px;
-`;
-
-export const Container = styled.View<ContainerProps>`
-  ${({ theme, increaseSize = false, fullHeight = false }) => `
+export const Container = styled.View`
+  ${({ theme}) => `
       background:${theme.colors.white};
-      border-top-left-radius:32px;
-      border-top-right-radius:32px;
-      flex:1;
-      height:${height * (increaseSize ? 0.8 : 0.7)}px;
-      position:absolute;
-      bottom:0;
-      right:0;
-      left:0;
-      z-index:9;
-      
-      ${fullHeight && modiffierWrapper}
+      border-top-left-radius:${RFValue(10)}px;
+      border-top-right-radius:${RFValue(10)}px;
+      height:${height * 0.7}px;
+
     `}
 `;

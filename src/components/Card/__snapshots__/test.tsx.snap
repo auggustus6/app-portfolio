@@ -19,8 +19,7 @@ exports[`should render correctly 1`] = `
       Object {
         "backgroundColor": "#fff",
         "borderRadius": 8,
-        "height": 337.5,
-        "width": 337.5,
+        "width": 675,
       },
     ]
   }
@@ -31,15 +30,20 @@ exports[`should render correctly 1`] = `
     style={
       Array [
         Object {
-          "height": "100%",
-          "justifyContent": "flex-end",
+          "alignItems": "flex-end",
+          "height": 353,
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
           "width": "100%",
         },
       ]
     }
   >
     <Image
-      borderRadius={8}
+      borderTopLeftRadius={8}
+      borderTopRightRadius={8}
       resizeMode="cover"
       source={
         Object {
@@ -65,21 +69,238 @@ exports[`should render correctly 1`] = `
       testID="card.background"
     />
     <Text
+      allowFontScaling={false}
       style={
         Array [
           Object {
-            "color": "#fff",
-            "fontFamily": "Poppins-Regular",
-            "fontSize": 14,
-            "fontWeight": "bold",
-            "paddingBottom": 8,
+            "color": undefined,
+            "fontSize": 82,
+          },
+          undefined,
+          Object {
+            "fontFamily": "EvilIcons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#575fcf",
+            "fontFamily": "Poppins-Black",
+            "fontSize": 43,
             "paddingLeft": 8,
           },
         ]
       }
     >
-      Restaurantes
+      R$ 
+      100,00
     </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#666",
+            "fontFamily": "Poppins-Regular",
+            "fontSize": 31,
+            "paddingLeft": 8,
+          },
+        ]
+      }
+    >
+      Imóveis
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#808080",
+            "height": 1,
+            "marginBottom": 8,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "marginTop": 8,
+            "width": "100%",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+            "flexWrap": "wrap",
+            "marginTop": 8,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 22,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#666",
+                "fontFamily": "Poppins-Regular",
+                "fontSize": 24,
+                "marginRight": 8,
+              },
+            ]
+          }
+        >
+          2 Quarto(s)
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 22,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#666",
+                "fontFamily": "Poppins-Regular",
+                "fontSize": 24,
+                "marginRight": 8,
+              },
+            ]
+          }
+        >
+          2 Banheiro(s)
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "center",
+            },
+          ]
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 22,
+              },
+              undefined,
+              Object {
+                "fontFamily": "Material Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#666",
+                "fontFamily": "Poppins-Regular",
+                "fontSize": 24,
+                "marginRight": 8,
+              },
+            ]
+          }
+        >
+          5 Vaga(s)
+        </Text>
+      </View>
+    </View>
   </View>
 </View>
 `;

@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 <Text
   align="left"
-  colorLabel="black"
+  colorLabel="#333"
   size="large"
   strong={false}
   style={

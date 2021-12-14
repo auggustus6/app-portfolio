@@ -1,38 +1,51 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+/* eslint-disable prettier/prettier */
+import React, { useEffect, useRef } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import {
   Animated,
   Easing,
   NativeScrollEvent,
   NativeSyntheticEvent,
-  TextInputSubmitEditingEventData,
-  Alert,
   ListRenderItem,
 } from 'react-native';
-import { useRestaurant } from '../../hooks/useRestaurant';
-import { Restaurant } from 'utils/types/restaurant';
 
 import Card from '../Card';
-import InputSearch from '../../components/InputSearch';
 import Heading from '../../components/Heading';
 import * as Styles from './styles';
+import Container from '../Container';
+import { useSelector } from 'react-redux';
+import { RealStateData } from 'utils/types/realState';
+import { RootState } from 'store';
+import Button from '../Button';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { LOAD_DATA } from '../../store/real-state/action';
+import { useTheme } from 'styled-components';
 
 const IndicatorAnimated = Animated.createAnimatedComponent(Styles.Indicator);
 const iconLoading = require('../../assets/images/loading_red.png');
+const backgroundImage = require('../../assets/images/header.png');
 
 type GridListProps = {
   handleScrollShared?: (value: number) => void;
 };
 
 const GridList = ({ handleScrollShared }: GridListProps) => {
-  const { restaurants, loadRestaurants, loading } = useRestaurant();
+  const theme = useTheme();
+  const { loading, data } = useSelector((state: RootState) => state.realState);
   const { navigate } = useNavigation();
   const animatedLoading = useRef(new Animated.Value(0)).current;
+  const dispatch = useAppDispatch();
 
-  const handleNavigate = (restaurantId: string) => {
-    navigate('Restaurant', {
-      id: restaurantId,
+
+  const handleNavigate = (propertyId: string) => {
+    navigate('Property', {
+      id: propertyId,
     });
+  };
+
+  const handleNavigateFilter = () => {
+    dispatch(LOAD_DATA());
+    navigate('FilterModal');
   };
 
   useEffect(() => {
@@ -49,21 +62,6 @@ const GridList = ({ handleScrollShared }: GridListProps) => {
     inputRange: [0, 1],
     outputRange: ['0deg', '360deg'],
   });
-
-  const handleSubmit = async (
-    event: NativeSyntheticEvent<TextInputSubmitEditingEventData>,
-  ) => {
-    if (!event.nativeEvent.text) {
-      Alert.alert(
-        'Ops, verifique os campos!',
-        'Você esqueceu de preencher o input!',
-      );
-      return;
-    }
-    navigate('Search', {
-      search: event.nativeEvent.text,
-    });
-  };
 
   const handleScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     handleScrollShared && handleScrollShared(e.nativeEvent.contentOffset.y);
@@ -85,38 +83,71 @@ const GridList = ({ handleScrollShared }: GridListProps) => {
     );
   };
 
-  const renderItem: ListRenderItem<Restaurant> = useCallback(
-    ({ item }) => {
-      return (
-        <Styles.Button
-          activeOpacity={9}
-          onPress={() => handleNavigate(item.id)}>
-          <Card
-            label={item.name}
-            imageSource={{ uri: item.image }}
-            key={item.id}
+  const renderItem: ListRenderItem<RealStateData> = ({ item, index }) => {
+    return (
+      <Styles.Button
+        testID={`button-${index}`}
+        activeOpacity={9}
+        onPress={() => handleNavigate(item.id)}>
+        <Card
+          label={item.address.formattedAddress}
+          imageSource={{ uri: item.images[0] }}
+          key={item.id}
+          {...item}
+        />
+      </Styles.Button>
+    );
+  };
+
+  if (loading) {
+    return (
+      <Styles.LoadingWrapper>
+        <Styles.Loading>
+          <Styles.LoadingText>Carregando</Styles.LoadingText>
+          <IndicatorAnimated
+            style={{ transform: [{ rotate: spin }] }}
+            source={iconLoading}
           />
-        </Styles.Button>
-      );
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
+        </Styles.Loading>
+      </Styles.LoadingWrapper>
+    );
+  }
 
   return (
     <Styles.Container
-      data={restaurants}
-      numColumns={2}
+      data={data}
+      testID="list-properties"
+      initialNumToRender={4}
       showsVerticalScrollIndicator={false}
       onEndReachedThreshold={0.1}
       onScroll={handleScroll}
-      onEndReached={() => loadRestaurants()}
       keyExtractor={item => String(item.id)}
       ListFooterComponent={renderFooter}
       ListHeaderComponent={() => (
         <>
-          <InputSearch onSubmitEditing={handleSubmit} />
-          <Heading label="Restaurantes" size="small" strong />
+          <Styles.Header source={backgroundImage}>
+            <Container>
+              <Heading
+                label="Encontre seu mais novo imóvel"
+                testID="title-header"
+                size="large"
+                strong
+                colorLabel={theme.colors.white} />
+              <Heading
+                label="O seu imóvel está cada vez mais perto. Realize seu sonho!"
+                size="medium"
+                colorLabel={theme.colors.white}
+              />
+            </Container>
+          </Styles.Header>
+          <Container>
+            <Button
+              testID="button-filter"
+              label="Definir filtros"
+              onPress={handleNavigateFilter}
+            />
+          </Container>
+
         </>
       )}
       renderItem={renderItem}

@@ -39,8 +39,8 @@ exports[`should render correctly 1`] = `
     style={
       Array [
         Object {
-          "height": 30,
-          "width": 30,
+          "height": 98,
+          "width": 98,
         },
       ]
     }

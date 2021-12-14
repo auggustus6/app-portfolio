@@ -5,12 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 
 type BackButtonProps = {
   backIcon: ImageProps;
+  testID?: string;
 };
 
-const BackButton = ({ backIcon }: BackButtonProps) => {
+const BackButton = ({ backIcon, testID }: BackButtonProps) => {
   const { goBack } = useNavigation();
   return (
     <Styles.Button
+      testID={testID}
       accessibilityRole="button"
       onPress={() => goBack()}
       hitSlop={{ left: 20, top: 100 }}>
