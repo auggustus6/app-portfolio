@@ -69,7 +69,10 @@ const Property = () => {
   }
 
   return (
-    <Styles.Container pagingEnabled showsVerticalScrollIndicator={false}>
+    <Styles.Container
+      pagingEnabled
+      showsVerticalScrollIndicator={false}
+      testID="property-screen">
       <BackButton backIcon={backIcon} testID="button-back" />
       <FlatList
         data={property.images}
@@ -78,7 +81,7 @@ const Property = () => {
           <Styles.Image source={{ uri: item }} resizeMethod="resize" />
         )}
         horizontal
-        pagingEnabled
+        testID="property-list-images"
       />
 
       <Wrapper>

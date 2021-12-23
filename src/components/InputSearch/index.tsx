@@ -11,7 +11,8 @@ const InputSearch = (props: TextInputProps) => {
     <Styles.Container>
       <Styles.Icon source={icon} />
       <Styles.Input
-        {...props}
+        onChangeText={props.onChangeText}
+        testID={props.testID}
         placeholder={props.placeholder || 'Encontre o imóvel do seu sonho'}
         placeholderTextColor={theme.colors.gray}
       />

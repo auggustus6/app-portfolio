@@ -7,7 +7,7 @@ const Stack = createStackNavigator();
 
 const MainRouter = () => {
   return (
-    <Stack.Navigator mode="modal" headerMode="float">
+    <Stack.Navigator>
       <Stack.Screen
         name="Home"
         component={HomeRouter}

@@ -47,13 +47,14 @@ const FilterModal = () => {
 
   return (
     <Styles.Container>
-      <Container>
+      <Container testID="filter-screen" >
         <Heading
           size="medium"
           label="Localização do imóvel" />
 
         <InputSearch
           onChangeText={setAddress}
+          testID="input-search"
           placeholder="Digite uma rua, bairro ou cidade" />
 
         <Heading
@@ -63,6 +64,7 @@ const FilterModal = () => {
         <Slider
           value={price}
           minimumValue={1000}
+          testID="slider-price"
           maximumValue={1000000}
           renderThumbComponent={renderThumbComponent}
           onSlidingComplete={value => formatedValue(value as number)}
@@ -114,6 +116,7 @@ const FilterModal = () => {
           ))}
         </Styles.GridContainer>
         <Button
+          testID="button-handleFilter"
           label="Filtrar Imóveis"
           onPress={handleNavigate}
         />

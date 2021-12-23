@@ -14,7 +14,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Styles.Container>
+    <Styles.Container testID="home-screen">
       <GridList />
     </Styles.Container>
   );
